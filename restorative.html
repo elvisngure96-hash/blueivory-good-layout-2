@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Restorative Dentistry - Blueivory Healthcare</title>
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#fff;
+  color:#0f172a;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  width:100%;
+  padding:18px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:#504b96;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.brand-name{
+  font-size:22px;
+  font-weight:800;
+}
+
+.brand-name span{
+  color:#D72638;
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:25px;
+  align-items:center;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:#ffffff;
+  font-weight:500;
+}
+
+.nav-links a:hover{
+  color:#7EC8E3;
+}
+
+.book-btn{
+  background:#7EC8E3;
+  color:#fff;
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ================= HERO (2 IMAGES) ================= */
+.hero{
+  padding:60px 8% 20px;
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.hero img{
+  flex:1;
+  min-width:300px;
+  height:320px;
+  object-fit:cover;
+  border-radius:18px;
+}
+
+/* ================= CONTENT (NO BOX, GRADIENT BG) ================= */
+.container{
+  padding:80px 10%;
+   background:#f1f0f0
+}
+
+/* TEXT STYLING (BLACK + RED MIX) */
+h1{
+  font-size:42px;
+  margin-bottom:10px;
+  color:#000;
+}
+
+.subtitle{
+  font-size:18px;
+  color:#D72638;
+  margin-bottom:30px;
+  line-height:1.8;
+}
+
+h3{
+  margin-top:30px;
+  font-size:20px;
+  color:#000;
+}
+
+h3::before{
+  content:"• ";
+  color:#D72638;
+}
+
+p{
+  line-height:1.8;
+  color:#111;
+  margin-top:10px;
+}
+
+/* BUTTON (UNCHANGED) */
+.btn{
+  display:inline-block;
+  margin-top:40px;
+  background:#7EC8E3;
+  color:#fff;
+  padding:14px 22px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#5fb5d6;
+}
+
+/* BACK LINK */
+.back{
+  display:inline-block;
+  margin-top:20px;
+  color:#D72638;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* ================= FOOTER ================= */
+.footer{
+  background:#E9D8A6;
+  padding:70px 8%;
+  margin-top:60px;
+}
+
+.footer-container{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:40px;
+}
+
+.footer-box{
+  min-width:250px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+
+  .hero-images{
+    grid-template-columns:1fr;
+  }
+
+  .hero-images img{
+    height:250px;
+  }
+
+  .hero-text{
+    padding:50px 6%;
+  }
+
+  .hero-text h1{
+    font-size:32px;
+  }
+
+  .nav-links{
+    display:none;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+
+  <div class="logo-area">
+    <img src="images/logo.png" class="logo">
+    <div class="brand-name">Blue<span>ivory</span></div>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="index.html#care">Services</a></li>
+    <li><a href="booking.html" class="book-btn">Book Appointment</a></li>
+  </ul>
+
+</nav>
+
+<!-- ================= HERO (2 IMAGES) ================= -->
+<div class="hero">
+
+  <img src="images/restorative1.jpg" alt="Restorative Dentistry Image 1">
+  <img src="images/restorative2.jpg" alt="Restorative Dentistry Image 2">
+
+</div>
+
+<!-- ================= CONTENT ================= -->
+<div class="container">
+
+<h1>Restorative Dentistry</h1>
+
+<p class="subtitle">
+Bringing your teeth back to their best. Life happens — teeth get damaged, decay sets in, and sometimes we lose them altogether. Our restorative dentistry services focus on restoring function, comfort, and confidence using natural-looking modern solutions.
+</p>
+
+<h3>Cavities & Decay Treatment</h3>
+<p>Tooth decay is one of the most common dental problems in the world...</p>
+
+<h3>Fillings</h3>
+<p>We offer tooth-coloured composite fillings that blend naturally...</p>
+
+<h3>Root Canal Treatment</h3>
+<p>We carefully remove infected tissue and save the natural tooth...</p>
+
+<h3>Crowns</h3>
+<p>Custom-fitted caps that restore damaged teeth strength and appearance...</p>
+
+<h3>Bridges</h3>
+<p>A fixed solution that replaces missing teeth and restores function...</p>
+
+<a href="booking.html" class="btn">Book Appointment</a>
+
+<br>
+
+<a href="dental.html" class="back">← Back to Services</a>
+
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-box">
+      <h3>Blueivory Healthcare</h3>
+      <p>Lodwar, Turkana County</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Visit Us</h3>
+      <p>Mon–Sun: 7:00 AM – 9:00 PM</p>
+    </div>
+
+    <div class="footer-box">
+      <h3>Contact</h3>
+      <p>+254 700 000 000</p>
+    </div>
+
+  </div>
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blueivory Healthcare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ================= NAVBAR ================= */
+        .navbar {
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #504b96;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+.brand-name {
+    font-size: 28px;
+    font-weight: 800;
+    font-family: "Playfair Display", serif;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    color: #ffffff;
+}
+        
+    
+
+        .brand-name span {
+            color: #D72638;
+        }
+
+        .nav-menu {
+            display: flex;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #7EC8E3;
+        }
+
+        .book-btn {
+            background: #504b96;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .book-btn:hover {
+    background: #533c3c;
+    transform: translateY(-2px);
+    transition: 0.3s ease;
+}
+
+        .call-btn {
+            background: #25D366;;
+            color: #ffffff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .call-btn:hover {
+    background: #881e1e;
+    transform: translateY(-2px);
+    transition: 0.3s ease;
+}
+
+        /* BURGER */
+        .burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .burger span {
+            width: 28px;
+            height: 3px;
+            background: #0f172a;
+            border-radius: 5px;
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            width: 100%;
+            height: 90vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            animation: fade 12s infinite;
+        }
+
+        .fade1 {
+            background-image: url("images/slide1.jpg");
+            animation-delay: 0s;
+        }
+
+        .fade2 {
+            background-image: url("images/slide2.jpg");
+            animation-delay: 4s;
+        }
+
+        .fade3 {
+            background-image: url("images/slide3.jpg");
+            animation-delay: 8s;
+        }
+
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            30% {
+                opacity: 1;
+            }
+
+            40% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 8%;
+            transform: translateY(-50%);
+            max-width: 550px;
+            color: white;
+            z-index: 10;
+        }
+
+        .hero-content h1 {
+            font-size: 52px;
+            font-weight: 900;
+            color: #eee9d9;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            margin-top: 15px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #fff;
+        }
+
+        .hero-buttons {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* ================= CARE SECTION ================= */
+        .care-section {
+            padding: 100px 8%;
+            background:#ffffff;;
+        }
+
+        .care-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .care-header h5 {
+            color: #5850c5;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        .care-header h2 {
+            font-size: 48px;
+            margin-top: 12px;
+            font-weight: 800;
+            color: #881e1e;
+        }
+
+        .care-header p {
+            margin-top: 15px;
+            font-size: 17px;
+            color: #1a0505;
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .care-cards {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 540px;
+            background: #fff;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 28px;
+        }
+
+        .title-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .title-row h3 {
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        .icon {
+            font-size: 24px;
+        }
+
+        .card-content p {
+            font-size: 16px;
+            color: #881e1e;
+            line-height: 1.7;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 22px;
+        }
+
+        .link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #881e1e;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        /* ================= WHY SECTION ================= */
+        .why-section {
+            background: #f1f0f0;
+            padding: 80px 8%;
+        }
+
+        .why-left {
+            text-align: center;
+        }
+
+        .why-left small {
+            color: #5850c5;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .why-left h2 {
+            font-size: 38px;
+            margin-top: 10px;
+            color: #881e1e;
+        }
+
+        .why-left p {
+            margin-top: 15px;
+            max-width: 700px;
+            margin-inline: auto;
+            line-height: 1.7;
+            color: #050505;
+        }
+
+        .why-cards {
+            margin-top: 50px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .why-card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+        .why-card i {
+    color: #881e1e;
+    font-size: 32px;
+}
+
+        .why-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .why-card h3 {
+            margin-top: 12px;
+            margin-bottom: 10px;
+        }
+
+        /* ================= LOCATION ================= */
+        .location-section {
+            padding: 80px 8%;
+            background: #ffffff;
+        }
+
+        .location-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            background: #d0d0d4;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .location-left {
+            flex: 1;
+        }
+
+        .location-left h2 {
+            margin-top: 10px;
+            font-size: 34px;
+            color: #881e1e;
+        }
+
+        .location-left p {
+            margin-top: 15px;
+            line-height: 1.7;
+        }
+
+        .directions-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background: #7EC8E3;
+            color: #000;
+            padding: 12px 18px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .location-right {
+            flex: 1;
+        }
+
+        .location-right iframe {
+            width: 100%;
+            height: 320px;
+            border: 0;
+            border-radius: 12px;
+        }
+
+        /* ================= TESTIMONIALS ================= */
+        .testimonial-section {
+            background:color #dadada;
+            padding: 100px 8%;
+        }
+
+        .testimonial-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .testimonial-header h2 {
+            font-size: 42px;
+            color: #881e1e;
+        }
+
+        .testimonial-cards {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .testimonial-card {
+            background: white;
+            width: 350px;
+            padding: 30px;
+            border-radius: 22px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .stars {
+            color: #fbbf24;
+            font-size: 22px;
+            margin-bottom: 18px;
+        }
+
+        .review {
+            line-height: 1.8;
+        }
+
+        .patient {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-top: 25px;
+        }
+
+        .patient-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #7EC8E3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* ================= CTA ================= */
+        .cta-section {
+            padding: 100px 8%;
+            background: #ffffff;
+        }
+
+        .cta-container {
+            background: #41466e;
+            border-radius: 28px;
+            padding: 70px 40px;
+            text-align: center;
+        }
+
+        .cta-container h2 {
+            font-size: 42px;
+            color: white;
+            line-height: 1.4;
+        }
+
+        .cta-container p {
+            margin-top: 20px;
+            color: white;
+        }
+
+        .cta-buttons {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-book-btn {
+            background: white;
+            color: #000;
+            padding: 15px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .cta-whatsapp-btn {
+            background: #D72638;
+            color: white;
+            padding: 15px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* ================= FOOTER ================= */
+        .footer {
+            background: #881e1e;
+            padding: 70px 8%;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .footer-box {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-box h3 {
+            margin-bottom: 15px;
+            color: white
+        }
+
+        .footer-box p {
+            line-height: 1.8;
+            color: white
+        }
+
+        /* ================= MOBILE RESPONSIVE ================= */
+        @media(max-width:991px) {
+            .burger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 90px;
+                left: -100%;
+                width: 100%;
+                background: #9ec5db;
+                transition: 0.4s;
+                padding: 30px 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-content {
+                left: 5%;
+                right: 5%;
+                max-width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: 40px;
+            }
+
+            .care-header h2 {
+                font-size: 34px;
+            }
+
+            .card {
+                width: 100%;
+            }
+
+            .why-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .location-container {
+                flex-direction: column;
+            }
+        }
+
+        @media(max-width:600px) {
+            .navbar {
+                padding: 15px 5%;
+            }
+
+            .hero {
+                height: 95vh;
+            }
+
+            .hero-content h1 {
+                font-size: 30px;
+            }
+
+            .hero-content p {
+                font-size: 15px;
+            }
+
+            .hero-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .care-section,
+            .why-section,
+            .location-section,
+            .testimonial-section,
+            .cta-section,
+            .footer {
+                padding: 70px 5%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-card {
+                width: 100%;
+            }
+
+            .cta-container {
+                padding: 50px 20px;
+            }
+
+            .cta-container h2 {
+                font-size: 26px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+            }
+        }
+        /* WHATSAPP FLOATING BUTTON */
+
+.whatsapp-container{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #25D366;
+    color: white;
+
+    padding: 12px 18px;
+    border-radius: 50px;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+    z-index: 999;
+
+    transition: 0.3s ease;
+}
+
+.whatsapp-container:hover{
+    transform: translateY(-3px);
+}
+
+.whatsapp-container img{
+    width: 28px;
+    height: 28px;
+}
+
+/* TABLET */
+
+@media(max-width:768px){
+
+    .whatsapp-container{
+        bottom: 18px;
+        right: 18px;
+
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+
+    .whatsapp-container img{
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+    .whatsapp-container{
+
+        width: 60px;
+        height: 60px;
+
+        border-radius: 50%;
+
+        justify-content: center;
+        padding: 0;
+    }
+
+    .whatsapp-container span{
+        display: none;
+    }
+
+    .whatsapp-container img{
+        width: 30px;
+        height: 30px;
+    }
+}
+    </style>
+</head>
+
+<body> <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo-area"> <img src="images/logo.png" class="logo">
+            <div class="brand-name">Blue-Ivory Healthcare Ltd</div>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#care">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li> <a href="booking.html" class="book-btn"> Book Appointment </a> </li>
+            </ul>
+        </div>
+        <div class="burger" id="burger"> <span></span> <span></span> <span></span> </div>
+    </nav> <!-- HERO -->
+    <section class="hero">
+        <div class="slide fade1"></div>
+        <div class="slide fade2"></div>
+        <div class="slide fade3"></div>
+        <div class="hero-content">
+            <h1> Complete Dental & Eye Care for Lodwar and the Greater Turkana Community </h1>
+            <p> Trusted, affordable, and professional healthcare services for your smile and your vision. </p>
+            <div class="hero-buttons"> <a href="booking.html" class="book-btn"> Book Appointment </a> <a
+                    href="tel:+254705856328" class="call-btn"> Call Us </a> </div>
+        </div>
+    </section> <!-- CARE SECTION -->
+    <section class="care-section" id="care">
+        <div class="care-header">
+            <h5>Our care</h5>
+            <h2>Two specialties, one trusted clinic</h2>
+            <p> From routine check-ups to complex treatments — we care for your teeth and your sight under one roof.
+            </p>
+        </div>
+        <div class="care-cards"> <!-- DENTAL -->
+            <div class="card"> <img src="images/dental.jpg" class="card-img">
+                <div class="card-content">
+                    <div class="title-row"> <span class="icon">🦷</span>
+                        <h3>Dental care</h3>
+                    </div>
+                    <p> Check-ups, cleaning, fillings, orthodontics, implants, emergency care and more. </p>
+                    <div class="services-grid">
+                        <div>• General & Preventive</div>
+                        <div>• Cosmetic & Whitening</div>
+                        <div>• Orthodontics & Braces</div>
+                        <div>• Implants & Surgery</div>
+                    </div> <a href="dental.html" class="link"> Explore services → </a>
+                </div>
+            </div> <!-- OPTICAL -->
+            <div class="card"> <img src="images/optical.jpg" class="card-img">
+                <div class="card-content">
+                    <div class="title-row"> <span class="icon">👁</span>
+                        <h3>Optical care</h3>
+                    </div>
+                    <p> Comprehensive eye exams, prescription glasses, and contact lenses fitted precisely. </p>
+                    <div class="services-grid">
+                        <div>• Eye Examinations</div>
+                        <div>• Lens Fitting & Adjustments</div>
+                        <div>• Prescription Glasses</div>
+                        <div>• Contact Lenses</div>
+                    </div> <a href="services-optical.html" class="link"> Explore services → </a>
+                </div>
+            </div>
+        </div>
+    </section> <!-- WHY SECTION -->
+    <section class="why-section">
+        <div class="why-left"> <small>Why Choose Us</small>
+            <h2>Care that feels close to home</h2>
+            <p> We combine clinical excellence with the warmth of community. </p>
+        </div>
+        <div class="why-cards">
+            <div class="why-card">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h3>Trusted local care</h3>
+                <p>Serving Lodwar and Turkana with consistency.</p>
+            </div>
+            <div class="why-card">
+                <i class="fa-solid fa-handshake"></i>
+                <h3>Friendly team</h3>
+                <p>Warm and welcoming healthcare professionals.</p>
+            </div>
+            <div class="why-card">
+                 <i class="fa-solid fa-face-smile"></i>
+                <h3>Modern equipment</h3>
+                <p>Safe and advanced treatment standards.</p>
+            </div>
+            <div class="why-card">
+                <i class="fa-solid fa-book"></i>
+                <h3>Affordable care</h3>
+                <p>Honest pricing and flexible treatment options.</p>
+            </div>
+        </div>
+    </section> <!-- LOCATION -->
+    <section class="location-section">
+        <div class="location-container">
+            <div class="location-left"> <small>Our Home</small>
+                <h2>Proudly serving Lodwar, Turkana County.</h2>
+                <p> From the heart of Lodwar town, we welcome patients from across Turkana. </p> <a href="#"
+                    class="directions-btn"> 📍 Get Directions </a>
+            </div>
+            <div class="location-right"> <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.9077019987026!2d35.596725674987624!3d3.1191133533365183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x179ea22fdf115e37%3A0x4d5a288e99ae2282!2sEquity%20Bank%20Lodwar!5e0!3m2!1sen!2ske!4v1779687996311!5m2!1sen!2ske"
+                    allowfullscreen="" loading="lazy"> </iframe> </div>
+        </div>
+    </section> <!-- TESTIMONIALS -->
+    <section class="testimonial-section">
+        <div class="testimonial-header">
+            <h2>What patients say</h2>
+            <p>Real reviews from our community.</p>
+        </div>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review"> "Very professional and friendly staff. Highly recommend." </p>
+                <div class="patient">
+                    <div class="patient-circle">D</div>
+                    <div>
+                        <h4>Daniel K.</h4> <span>Verified patient</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review"> "Got my eyes checked and the service was amazing." </p>
+                <div class="patient">
+                    <div class="patient-circle">A</div>
+                    <div>
+                        <h4>Amina H.</h4> <span>Verified patient</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="review"> "Great experience and very clean clinic." </p>
+                <div class="patient">
+                    <div class="patient-circle">P</div>
+                    <div>
+                        <h4>Peter L.</h4> <span>Verified patient</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> <!-- CTA -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2> Your health matters — visit Blueivory Healthcare today. </h2>
+            <p> Book an appointment, walk in, or contact us today. </p>
+            <div class="cta-buttons"> <a href="booking.html" class="cta-book-btn"> Book Appointment </a> <a
+                    href="https://wa.me/254705856328" class="cta-whatsapp-btn"> WhatsApp </a> </div>
+        </div>
+    </section> <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>Blueivory Healthcare</h3>
+                <p> Trusted, affordable, and professional healthcare services in Lodwar. </p>
+            </div>
+            <div class="footer-box">
+                <h3>Visit Us</h3>
+                <p>Lodwar, Turkana County</p>
+                <p>Mon–Sun: 7AM – 9PM</p>
+            </div>
+            <div class="footer-box">
+                <h3>Contact</h3>
+                <p>+254 705 856 328</p>
+                <p>info@blueivory.com</p>
+            </div>
+        </div>
+    </footer> <!-- SCRIPT -->
+    <script> const burger = document.getElementById("burger"); const navMenu = document.getElementById("navMenu"); burger.onclick = () => { navMenu.classList.toggle("active"); }; </script>
+<a href="https://wa.me/254705856328?text=Hello%20Blueivory%20Healthcare,%20I%20would%20like%20to%20book%20an%20appointment."
+   class="whatsapp-container"
+   target="_blank">
+
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+         alt="WhatsApp">
+
+    <span>Chat with us</span>
+
+</a>
+</body>
+
+</html>
